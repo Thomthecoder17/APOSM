@@ -10,8 +10,7 @@ int responseDelay = 2;
 int yVal = 0;
 int tiltState = 0;
 int button = 18;
-int mic = 26;
-int adcVoltReading;
+int micPin = 26;
 
 void setup() {
   Serial.begin(9600);
@@ -19,6 +18,7 @@ void setup() {
   pinMode(tiltsensor, INPUT);
   pinMode(pot, INPUT);
   pinMode(button, INPUT_PULLUP);
+  pinMode(micPin, OUTPUT);
   Mouse.begin();
 }
 
@@ -27,13 +27,15 @@ void loop() {
     exit(0);
   }
 
-  adcVoltReading = analogRead
-  
+  int micval = analogRead(micPin); 
+  tiltState = digitalRead(tiltsensor); 
   currentState = digitalRead(SENSOR_PIN); 
   int prevPotState = newPotState;
   newPotState = (analogRead(pot) * 1.75953079179); // Read sensor
   int moveAmount = newPotState-prevPotState;
 
+  Serial.print("vol: ");
+  Serial.println(micval);
   Serial.print("tilt: ");
   Serial.println(tiltState);
   Serial.print("pot: ");
@@ -47,7 +49,6 @@ void loop() {
   }
 
   if(lastState == LOW && currentState == HIGH) {
-    Mouse.click();
     Mouse.press();
     Serial.println("Touch detected!"); // Touched
   }
