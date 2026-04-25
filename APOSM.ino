@@ -60,3 +60,4 @@ void loop() {
   lastState = currentState; // Save state
   delay(10); // Small delay to debounce
 }
+ 
