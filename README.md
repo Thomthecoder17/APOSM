@@ -3,7 +3,7 @@ A Piece Of S*** Mouse
 (Featuring Copilot button, sponsored by Microsoft (kinda))
 
 Have you ever thought that your mouse was too easy to use?  
-Have you ever thought that the Apple Magic Mouse was too ergonomic?
+Have you ever thought that the Apple Magic Mouse was too ergonomic?  
 Have you ever wished that you could use two hands to move your mouse?
 
 Well, do we have the solution for you!
